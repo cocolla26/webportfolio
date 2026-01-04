@@ -1,0 +1,510 @@
+/* --- Variables & Reset --- */
+:root {
+  --bg-color: #fffdfa;
+  --accent-orange: #ffab91;
+  --accent-orange-dark: #e89175;
+  --main-black: #2d2d2d;
+  --text-secondary: #666666;
+  --font-jp: "Zen Maru Gothic", sans-serif;
+  --font-en: "Noto Serif JP", serif;
+  --nav-height: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height); /* スクロール位置の微調整 */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--main-black);
+  font-family: var(--font-jp);
+  line-height: 1.9;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Utils --- */
+.py-160 {
+  padding: 160px 0;
+}
+.section-rel {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.bg-glass-dark {
+  background: rgba(0, 0, 0, 0.015);
+  backdrop-filter: blur(5px);
+}
+
+/* Texture & UI */
+.paper-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://free-paper-texture.com/p/p0435/p0435_m.jpg"); /* 外部URLまたは有効なパスに修正 */
+  opacity: 0.5; /* 0.8だと濃すぎるため、視認性を考慮し0.1程度を推奨 */
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/* --- シンプルなグレーの影カーソル --- */
+.cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px; /* 影の広がり（お好みで調整してください） */
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.07) 0%,
+    /* 中心は薄いグレー */ rgba(0, 0, 0, 0) 70% /* 外側に向かって透明に消える */
+  );
+  pointer-events: none; /* コンテンツのクリックを邪魔しない */
+  z-index: 9998; /* 紙の質感(9999)のすぐ下に配置 */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s; /* ホバー時に大きさを変える用 */
+}
+
+/* リンクの上にマウスが乗った時に、影を少し大きく、または濃くする場合 */
+.cursor-shadow.active {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+/* --- Typography --- */
+.filter-apply {
+  filter: url(#hand-drawn);
+}
+.title-shadow {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.text-orange {
+  color: var(--accent-orange-dark);
+}
+.section-title-en {
+  font-family: var(--font-en);
+  font-size: 1rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--accent-orange-dark);
+  font-weight: 700;
+}
+.section-num-vertical {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  writing-mode: vertical-rl;
+  opacity: 0.15;
+  font-family: var(--font-en);
+  font-weight: bold;
+}
+
+/* 背景巨大文字 */
+.bg-large-text {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  font-family: var(--font-en);
+  font-size: clamp(8rem, 20vw, 15rem);
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.015);
+  pointer-events: none;
+  z-index: -1;
+  user-select: none;
+}
+
+/* --- Navigation --- */
+.custom-nav {
+  background: rgba(255, 253, 250, 0.94) !important;
+  backdrop-filter: blur(12px);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+.nav-link {
+  font-weight: 700 !important;
+  font-size: 0.95rem;
+  color: var(--main-black) !important;
+}
+.btn-cta-nav {
+  background: var(--accent-orange);
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(255, 171, 145, 0.3);
+  transition: 0.3s;
+}
+.btn-cta-nav:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* --- Hero --- */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-bg-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://user0514.cdnw.net/shared/img/thumb/PK-PAUI8071_TP_V.jpg")
+    center/cover;
+  transform: scale(1.05);
+  z-index: 1;
+}
+.hero-overlay-soft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 25% 50%,
+    rgba(255, 253, 250, 0.98) 20%,
+    rgba(255, 253, 250, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+/* --- Cards --- */
+.work-card {
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: 0.4s;
+}
+.work-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.price-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 32px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.price-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+.price-card.featured {
+  border: 2px solid var(--accent-orange);
+  transform: scale(1.06);
+  z-index: 2;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* --- Price Components --- */
+.price-stack {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.price-old {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+.price-current {
+  font-family: var(--font-en);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--main-black);
+  line-height: 1;
+}
+.tax-in {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-jp);
+  font-weight: 400;
+}
+.recommend-tag {
+  background: var(--accent-orange);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.monitor-banner {
+  background: #fff;
+  border-left: 5px solid var(--accent-orange);
+  border-radius: 8px;
+  max-width: 850px;
+}
+
+/* --- Process Flow --- */
+.process-flow-line {
+  position: relative;
+}
+.process-flow-line::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-orange),
+    var(--accent-orange) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+  opacity: 0.4;
+}
+.process-icon-wrap {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border: 2px solid var(--accent-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--accent-orange-dark);
+}
+
+/* --- Components --- */
+.image-mask {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  overflow: hidden;
+}
+.shadow-soft {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+.badge-skill {
+  display: inline-block;
+  padding: 4px 16px;
+  background: rgba(255, 171, 145, 0.1);
+  color: var(--accent-orange-dark);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  margin: 0 8px 8px 0;
+  font-weight: 700;
+}
+
+.btn-cta-main {
+  background: var(--main-black);
+  color: #fff !important;
+  padding: 20px 60px;
+  border-radius: 100px;
+  font-weight: 700;
+  border: none;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn-cta-main:hover {
+  background: var(--accent-orange-dark);
+  transform: scale(1.06);
+}
+.btn-xl {
+  font-size: 1.25rem;
+}
+.shadow-orange {
+  box-shadow: 0 10px 30px rgba(232, 145, 117, 0.3);
+}
+
+.support-box {
+  border-left: 5px solid var(--accent-orange);
+  padding: 25px 35px;
+  background: #fff;
+  border-radius: 0 15px 15px 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.view-process-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--main-black);
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.view-process-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: var(--accent-orange-dark);
+}
+.view-process-btn:hover {
+  background-color: var(--accent-orange);
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 171, 145, 0.3);
+}
+.view-process-btn:hover i {
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* ============================================================
+   Responsive Design (Tablet & Mobile Complete Version)
+   ============================================================ */
+
+/* --- 1. タブレット & モバイル共通設定 (991px以下) --- */
+@media (max-width: 991px) {
+  
+  /* ナビゲーション調整 */
+  .navbar-nav .btn-cta-nav {
+    display: none !important; 
+  }
+
+  /* セクション余白の最適化 */
+  .py-160 {
+    padding: 90px 0;
+  }
+
+  /* 【重要】No.01〜のあしらいを横書き化し、重なりを完全に解消 */
+  .section-num-vertical {
+    writing-mode: horizontal-tb !important; 
+    position: relative !important;         
+    display: block !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 背景の巨大文字は視認性を優先して非表示または極薄に */
+  .bg-large-text {
+    display: none !important; 
+  }
+
+  /* 見出しのサイズとバランス */
+  .h1.fw-bold {
+    font-size: 1.8rem !important;
+    line-height: 1.4;
+    margin-bottom: 1.2rem !important;
+  }
+  .h1.fw-bold br {
+    display: none; /* 改行は画面幅に任せる */
+  }
+
+  /* カード類のレイアウト（2カラムにすることで余白を確保） */
+  .col-md-4 {
+    width: 50%; 
+  }
+  #works .row, #price .row, #skills .row {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* About / Concept の画像とテキストの距離 */
+  .offset-md-1 {
+    margin-left: 0 !important;
+    padding-left: 15px !important;
+    margin-top: 30px;
+  }
+}
+
+/* --- 2. スマートフォン専用設定 (768px以下) --- */
+@media (max-width: 768px) {
+  
+  /* ヒーローセクションを全画面(FV)表示 */
+  .hero-section {
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .display-2 {
+    font-size: 2.1rem !important;
+    line-height: 1.4;
+  }
+
+  .sub-copy {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  /* ヒーロー内のボタンは非表示（下部固定ボタンがあるため） */
+  .hero-section .btn-cta-main {
+    display: none !important;
+  }
+
+  /* カードを1カラムに */
+  .col-md-4 {
+    width: 100%;
+  }
+
+  /* プロセスの点線を排除 */
+  .process-flow-line::after {
+    display: none !important;
+  }
+  .process-step {
+    margin-bottom: 40px;
+  }
+
+  /* 下部固定ボタン */
+  .mobile-fixed-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 253, 250, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .mobile-fixed-cta .btn-cta-main {
+    display: block !important;
+    padding: 14px !important;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 50px;
+  }
+
+  /* フッターの被り防止 */
+  footer {
+    padding-bottom: 100px !important;
+  }
+
+  /* マウスストーカーをスマホでは無効化 */
+  .cursor-shadow {
+    display: none !important;
+  }
+}
