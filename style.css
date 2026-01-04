@@ -515,4 +515,23 @@ body {
     -webkit-background-size: cover;
   }
 }
+  .hero-section {
+    /* 1. 高さを動的なdvhに変更（アドレスバーの影響を最小化） */
+    height: 100dvh;
+    min-height: -webkit-fill-available;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-full {
+    /* 2. 背景固定を「scroll」に戻す（これがズーム防止に最も重要） */
+    background-attachment: scroll !important;
+    
+    /* 3. 画像の位置とサイズを再定義 */
+    background-size: cover;
+    background-position: center center;
+    
+    /* 4. iOS Safariでのレンダリングを安定させる */
+    transform: translateZ(0); 
+    -webkit-transform: translateZ(0);
 }
