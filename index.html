@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cocolla | Yamashita maki Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cursor-shadow"></div>
+    <div class="paper-texture"></div>
+
+    <svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+        <filter id="hand-drawn">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+        </filter>
+    </svg>
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-nav">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="#">cocolla</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="#concept">Concept</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#price">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item ms-lg-3"><a class="nav-link btn-cta-nav px-4" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section d-flex align-items-center">
+        <div class="hero-bg-full"></div>
+        <div class="hero-overlay-soft"></div>
+        <div class="container position-relative z-3">
+            <h1 class="display-2 fw-bold mb-4 filter-apply title-shadow">想いを描き、<br>デジタルに体温を。</h1>
+            <p class="lead sub-copy mb-5 fw-medium">
+                2026年、新しい一歩を踏み出すWebデザイナーです。<br>
+                使う人の心に、しっくりと馴染む体験を丁寧にデザインします。
+            </p>
+            <a href="#contact" class="btn btn-cta-main btn-lg">お仕事の相談をする</a>
+        </div>
+    </header>
+
+    <section id="concept" class="py-160 section-rel">
+        <div class="bg-large-text">CONCEPT</div>
+        <div class="container position-relative">
+            <span class="section-num-vertical">No.01</span>
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-5 mb-md-0">
+                    <div class="image-mask shadow-soft">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800"
+                            alt="Concept" class="img-fluid filter-apply">
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <h2 class="section-title-en mb-3">Concept</h2>
+                    <h3 class="h1 fw-bold mb-4 filter-apply">デザインは、<br>温度を伝える言葉。</h3>
+                    <p class="mb-4 fs-5 fw-medium text-dark-emphasis">ただ綺麗に整えるだけでなく、その奥にある「体温」まで届けたい。</p>
+                    <p class="lh-lg text-secondary">
+                        何気ない日常の美しさや、言葉にできない微かな感情。それらを丁寧に紡ぎ、受け取った人の心がふんわりと温かくなるようなWebサイトを目指しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works" class="py-160 bg-glass-dark section-rel">
+        <div class="bg-large-text">WORKS</div>
+        <div class="container position-relative">
+            <span class="section-num-vertical">No.02</span>
+            <h2 class="section-title-en text-center mb-80">Works</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="work-card shadow-sm h-100">
+                        <div class="work-img-box"><img
+                                src="https://user0514.cdnw.net/shared/img/thumb/06ellyfdesk845_TP_V.jpg" alt="Work 01"
+                                class="img-fluid filter-apply"></div>
+                        <div class="p-4 bg-white">
+                            <h4 class="h5 fw-bold mb-2">Brand Site</h4>
+                            <p class="small text-secondary mb-4">安心感を抱いてもらう色彩設計と余白の活用</p>
+                            <a href="#" class="view-process-btn"><span>制作の舞台裏を見る</span><i
+                                    class="bi bi-arrow-right-short"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-md-5">
+                    <div class="work-card shadow-sm h-100">
+                        <div class="work-img-box"><img
+                                src="https://user0514.cdnw.net/shared/img/thumb/06ellyfdesk845_TP_V.jpg" alt="Work 02"
+                                class="img-fluid filter-apply"></div>
+                        <div class="p-4 bg-white">
+                            <h4 class="h5 fw-bold mb-2">Service LP</h4>
+                            <p class="small text-secondary mb-4">信頼と透明感を両立したUI/UXデザイン</p>
+                            <a href="#" class="view-process-btn"><span>制作の舞台裏を見る</span><i
+                                    class="bi bi-arrow-right-short"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="work-card shadow-sm h-100">
+                        <div class="work-img-box"><img
+                                src="https://user0514.cdnw.net/shared/img/thumb/06ellyfdesk845_TP_V.jpg" alt="Work 03"
+                                class="img-fluid filter-apply"></div>
+                        <div class="p-4 bg-white">
+                            <h4 class="h5 fw-bold mb-2">Portfolio</h4>
+                            <p class="small text-secondary mb-4">個性をブランド化する戦略的な構成</p>
+                            <a href="#" class="view-process-btn"><span>制作の舞台裏を見る</span><i
+                                    class="bi bi-arrow-right-short"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="price" class="py-160 section-rel">
+        <div class="bg-large-text">PRICE</div>
+        <div class="container position-relative">
+            <span class="section-num-vertical">No.03</span>
+            <h2 class="section-title-en text-center mb-5">Service & Price</h2>
+            <div class="monitor-banner mb-5 p-4 text-center mx-auto shadow-sm">
+                <p class="mb-0 fw-bold text-orange fs-5 fs-md-2">
+                    【初回限定】特別モニター価格で承っております
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center pt-4">
+                <div class="col-md-4">
+                    <div class="price-card p-5 text-center">
+                        <h4 class="h5 fw-bold mb-4">Landing Page</h4>
+                        <div class="price-stack mb-4">
+                            <span class="price-old">通常価格 ¥80,000</span>
+                            <div class="price-current">¥50,000<span class="tax-in">〜 (税込)</span></div>
+                        </div>
+                        <p class="small text-secondary">構成案の作成からデザイン、コーディングまで一貫して対応いたします。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-card featured p-5 text-center">
+                        <div class="recommend-tag">Recommended</div>
+                        <h4 class="h5 fw-bold mb-4">Standard Site</h4>
+                        <div class="price-stack mb-4">
+                            <span class="price-old">通常価格 ¥200,000</span>
+                            <div class="price-current">¥120,000<span class="tax-in">〜 (税込)</span></div>
+                        </div>
+                        <p class="small text-secondary">標準的な5ページ構成のサイト制作。ビジネスの顔となる信頼感ある1枚を。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="price-card p-5 text-center">
+                        <h4 class="h5 fw-bold mb-4">Support</h4>
+                        <div class="price-stack mb-4">
+                            <span class="price-old">通常価格 ¥10,000</span>
+                            <div class="price-current">¥5,000<span class="tax-in">/月〜 (税込)</span></div>
+                        </div>
+                        <p class="small text-secondary">公開後の保守・修正を代行。ITが苦手な方も安心して運営に専念いただけます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-160 bg-glass-dark section-rel">
+        <div class="bg-large-text">PROCESS</div>
+        <div class="container position-relative">
+            <span class="section-num-vertical">No.04</span>
+            <h2 class="section-title-en text-center mb-80">Process</h2>
+            <div class="row g-0 process-flow-line">
+                <div class="col-md-3 mb-5 mb-md-0">
+                    <div class="process-step text-center">
+                        <div class="process-icon-wrap filter-apply mb-4 shadow-sm">01</div>
+                        <h5 class="fw-bold h5 mb-3">Listen</h5>
+                        <p class="small fw-medium">まずはあなたの「想い」を<br>じっくり伺います。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5 mb-md-0">
+                    <div class="process-step text-center">
+                        <div class="process-icon-wrap filter-apply mb-4 shadow-sm">02</div>
+                        <h5 class="fw-bold h5 mb-3">Fashion</h5>
+                        <p class="small fw-medium">伺った内容を元に、<br>コンセプトを形にします。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5 mb-md-0">
+                    <div class="process-step text-center">
+                        <div class="process-icon-wrap filter-apply mb-4 shadow-sm">03</div>
+                        <h5 class="fw-bold h5 mb-3">Design</h5>
+                        <p class="small fw-medium">使い心地と美しさを<br>両立した設計を行います。</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="process-step text-center">
+                        <div class="process-icon-wrap filter-apply mb-4 shadow-sm">04</div>
+                        <h5 class="fw-bold h5 mb-3">Coding</h5>
+                        <p class="small fw-medium">最新の技術を用いて、<br>丁寧に実装いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-160 section-rel">
+        <div class="bg-large-text">ABOUT</div>
+        <div class="container position-relative">
+            <span class="section-num-vertical">No.05</span>
+            <div class="row align-items-center mb-120">
+                <div class="col-md-5 mb-5 mb-md-0 text-center">
+                    <div class="image-mask shadow-soft">
+                        <img src="https://cdn.pixabay.com/photo/2021/02/17/11/57/coffee-6023991_1280.jpg"
+                            alt="About Maki" class="img-fluid filter-apply">
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <h2 class="section-title-en mb-4">About</h2>
+                    <h3 class="h1 fw-bold mb-4 filter-apply">Yamashita maki</h3>
+                    <p class="h4 fw-bold text-orange mb-4">「想い」に形を与え、温度を添えること。</p>
+                    <p class="lh-lg text-secondary fw-medium">
+                        情緒的なデザインに可能性を感じ、2026年より活動を開始しました。日々の生活の中にある小さな美しさや、対話の中から生まれる「その人らしさ」を大切に、Webの世界に落とし込みます。</p>
+                </div>
+            </div>
+
+            <div id="skills" class="row g-4 pt-5">
+                <div class="col-md-4">
+                    <div class="skill-card p-5 h-100 shadow-sm">
+                        <h5 class="fw-bold h4 mb-4 text-orange border-bottom pb-2">Design</h5>
+                        <div class="mb-4"><span class="badge-skill">Figma</span><span class="badge-skill">Adobe
+                                Express</span></div>
+                        <p class="small lh-lg text-secondary">ユーザー体験を重視したプロトタイプ作成から、ロゴ、SNS用画像制作まで、ブランドの世界観を一貫して構築します。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card p-5 h-100 shadow-sm">
+                        <h5 class="fw-bold h4 mb-4 text-orange border-bottom pb-2">Develop</h5>
+                        <div class="mb-4"><span class="badge-skill">HTML5 / CSS3</span><span
+                                class="badge-skill">WordPress</span></div>
+                        <p class="small lh-lg text-secondary">
+                            レスポンシブ対応を標準とし、運用しやすい綺麗なコードを。最新のトレンドを反映したモダンで軽量な実装も得意としています。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card p-5 h-100 shadow-sm">
+                        <h5 class="fw-bold h4 mb-4 text-orange border-bottom pb-2">Mind</h5>
+                        <div class="mb-4"><span class="badge-skill">Accessibility</span><span class="badge-skill">UI/UX
+                                Strategy</span></div>
+                        <p class="small lh-lg text-secondary">
+                            誰にでも使いやすく、かつ時代に馴染む表現を追求。視覚的な美しさだけでなく、情報の伝わりやすさと持続性を大切にしています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-160 text-center bg-glass-dark">
+        <div class="container">
+            <h2 class="section-title-en mb-4">Contact</h2>
+            <h3 class="display-5 fw-bold mb-5">想いをカタチにする一歩。</h3>
+            <div class="support-box mb-5 shadow-sm">
+                <p class="fw-bold mb-2 text-dark">ご相談は無料です。まずはお気軽にご連絡ください。</p>
+                <p class="small text-secondary mb-0">「イメージが固まっていない」「一部だけ直したい」そんな段階でも大歓迎です。<br>24時間以内に丁寧にお返事いたします。</p>
+            </div>
+            <div class="pb-5">
+                <a href="https://forms.gle/xspvH2qY3L2zZYei9" class="btn btn-cta-main btn-xl">お仕事の相談をする</a>
+            </div>
+            <div class="mt-120 pt-5 border-top border-secondary-subtle">
+                <p class="logo-text h4 mb-3">cocolla</p>
+                <p class="small text-secondary opacity-75">&copy; 2026 cocolla. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="mobile-fixed-cta d-lg-none">
+        <a href="https://forms.gle/xspvH2qY3L2zZYei9" class="btn btn-cta-main w-100">お仕事の相談をする</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Custom Mouse Tracker
+        document.addEventListener('mousemove', (e) => {
+            const shadow = document.querySelector('.cursor-shadow');
+            if (shadow) {
+                shadow.style.left = e.clientX + 'px';
+                shadow.style.top = e.clientY + 'px';
+            }
+        });
+
+        // リンクやボタンに乗った時に影を少し変化させる演出
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.querySelector('.cursor-shadow').classList.add('active');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.querySelector('.cursor-shadow').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
