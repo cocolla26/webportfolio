@@ -507,4 +507,12 @@ body {
   .cursor-shadow {
     display: none !important;
   }
+  @media (max-width: 768px) {
+  .hero-bg-full, 
+  .section-with-bg {
+    background-attachment: scroll !important; /* fixedを解除 */
+    /* 代わりに背景を動かしたくない場合は以下 */
+    -webkit-background-size: cover;
+  }
+}
 }
